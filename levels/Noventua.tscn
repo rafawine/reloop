@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://det7fu1lssc51"]
+
+[ext_resource type="PackedScene" uid="uid://ch4qclwki8bb3" path="res://player/Player.tscn" id="1_hsiia"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_muvwl"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_muvwl"]
+albedo_color = Color(0.2036809, 0.20368093, 0.2036809, 1)
+uv2_scale = Vector3(20, 20, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_muvwl"]
+size = Vector3(20, 1, 20)
+
+[node name="Noventura" type="Node3D" unique_id=1459556963]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=462468070]
+light_color = Color(0.93681407, 0.89959097, 0.55167514, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1007260492]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=929705447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_muvwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_muvwl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=196296802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_muvwl")
+
+[node name="CharacterBody3D" parent="." unique_id=196993075 instance=ExtResource("1_hsiia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
