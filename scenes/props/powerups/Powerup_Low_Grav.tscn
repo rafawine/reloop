@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c02wtgqbmnsk2"]
+
+[ext_resource type="Script" uid="uid://hnjxjb2g56a7" path="res://scenes/props/powerups/powerup_low_grav.gd" id="1_6yufs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jymrl"]
+albedo_color = Color(0.54509807, 0.2901961, 0.6156863, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6yufs"]
+material = SubResource("StandardMaterial3D_jymrl")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_507o2"]
+
+[node name="PowerUpLowGrav" type="Area3D" unique_id=2043062377]
+script = ExtResource("1_6yufs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1731647078]
+mesh = SubResource("BoxMesh_6yufs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1391887002]
+shape = SubResource("BoxShape3D_507o2")

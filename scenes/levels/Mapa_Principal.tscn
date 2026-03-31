@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://beaxc3l0hfl3m"]
 
+[ext_resource type="PackedScene" uid="uid://cwvkeye16kkc3" path="res://scenes/props/powerups/Jump_Silencer.tscn" id="2_4cl3d"]
 [ext_resource type="PackedScene" uid="uid://ch4qclwki8bb3" path="res://scenes/player/Player.tscn" id="2_qgtup"]
+[ext_resource type="PackedScene" uid="uid://c02wtgqbmnsk2" path="res://scenes/props/powerups/Powerup_Low_Grav.tscn" id="3_4cl3d"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_cua6d"]
 
@@ -489,3 +491,9 @@ mesh = SubResource("ArrayMesh_7m4hh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pared_Puerta_4m4/StaticBody3D" unique_id=1325150375]
 shape = SubResource("ConcavePolygonShape3D_obrjf")
+
+[node name="Area3D" parent="." unique_id=1093818375 instance=ExtResource("2_4cl3d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3, 1, 7)
+
+[node name="PowerUpLowGrav" parent="." unique_id=2043062377 instance=ExtResource("3_4cl3d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.317375, 1.0662009, -8)
