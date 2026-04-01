@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cymdoegqowybw"]
+
+[ext_resource type="Script" uid="uid://hnjxjb2g56a7" path="res://scenes/props/powerups/pickup_item.gd" id="1_511qm"]
+[ext_resource type="Resource" uid="uid://bplhk86wiv87f" path="res://scenes/props/items/arma_scar.tres" id="2_akxsd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_511qm"]
+albedo_color = Color(0.21568628, 0.21960784, 0.21960784, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wwywy"]
+material = SubResource("StandardMaterial3D_511qm")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_akxsd"]
+
+[node name="PickupScar" type="Area3D" unique_id=232268238]
+script = ExtResource("1_511qm")
+item_resource = ExtResource("2_akxsd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2034455843]
+mesh = SubResource("BoxMesh_wwywy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1865759886]
+shape = SubResource("BoxShape3D_akxsd")

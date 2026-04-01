@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c02wtgqbmnsk2"]
 
-[ext_resource type="Script" uid="uid://hnjxjb2g56a7" path="res://scenes/props/powerups/powerup_low_grav.gd" id="1_6yufs"]
+[ext_resource type="Script" uid="uid://hnjxjb2g56a7" path="res://scenes/props/powerups/pickup_item.gd" id="1_6yufs"]
+[ext_resource type="Resource" uid="uid://cn7yap4jm0lu7" path="res://scenes/props/items/cubo_antigravedad.tres" id="2_507o2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jymrl"]
 albedo_color = Color(0.54509807, 0.2901961, 0.6156863, 1)
@@ -12,6 +13,7 @@ material = SubResource("StandardMaterial3D_jymrl")
 
 [node name="PowerUpLowGrav" type="Area3D" unique_id=2043062377]
 script = ExtResource("1_6yufs")
+item_resource = ExtResource("2_507o2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1731647078]
 mesh = SubResource("BoxMesh_6yufs")

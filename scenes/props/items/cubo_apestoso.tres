@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d3kc67h2poccd"]
+
+[ext_resource type="Script" uid="uid://soj8qr8syp5d" path="res://resources/item_data.gd" id="1_buaak"]
+[ext_resource type="Script" uid="uid://cqa68f8ansact" path="res://scenes/player/mechanics/stink_mechanic.gd" id="2_kdx2m"]
+
+[resource]
+script = ExtResource("1_buaak")
+name = "Cubo Apestoso"
+max_stack = 6
+drop_scene_path = "uid://bqaf5xkgkvb2l"
+mechanic_script = ExtResource("2_kdx2m")
+metadata/_custom_type_script = "uid://soj8qr8syp5d"

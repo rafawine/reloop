@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ch4qclwki8bb3"]
 
 [ext_resource type="Script" uid="uid://8y0gpmt4bio3" path="res://scenes/player/player.gd" id="1_wr5hl"]
+[ext_resource type="Script" uid="uid://cqt0obh6qircd" path="res://scenes/player/inventory.gd" id="2_524rm"]
 [ext_resource type="Script" uid="uid://bklx450k0i4f4" path="res://scenes/player/mechanics/basic_movement.gd" id="2_gfjak"]
 [ext_resource type="Script" uid="uid://dt3ryy6tbyppo" path="res://scenes/player/mechanics/jump_mechanic.gd" id="3_4kuee"]
 
@@ -12,8 +13,6 @@ height = 1.85
 radius = 0.4
 height = 1.85
 
-[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_3c3w1"]
-
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=196993075]
 script = ExtResource("1_wr5hl")
 
@@ -24,19 +23,39 @@ shape = SubResource("CapsuleShape3D_ehsmr")
 mesh = SubResource("CapsuleMesh_ulp21")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=383612395]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=982321938]
-shape = SubResource("SeparationRayShape3D_3c3w1")
-spring_length = 2.5
-margin = 0.05
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
+spring_length = 3.0
+margin = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=168106524]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
 fov = 80.0
+near = 0.01
+
+[node name="RayCast3D" type="RayCast3D" parent="CameraPivot/SpringArm3D/Camera3D" unique_id=956567013]
+target_position = Vector3(0, 0, -6)
+collide_with_areas = true
+
+[node name="Inventory" type="Node" parent="." unique_id=61616243]
+script = ExtResource("2_524rm")
 
 [node name="BasicMovement" type="Node" parent="." unique_id=1810664613]
 script = ExtResource("2_gfjak")
 
 [node name="JumpMechanic" type="Node" parent="." unique_id=2073644515]
 script = ExtResource("3_4kuee")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1152587404]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=989977145]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 2

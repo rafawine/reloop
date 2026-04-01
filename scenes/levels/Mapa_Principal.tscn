@@ -2,7 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cwvkeye16kkc3" path="res://scenes/props/powerups/Jump_Silencer.tscn" id="2_4cl3d"]
 [ext_resource type="PackedScene" uid="uid://ch4qclwki8bb3" path="res://scenes/player/Player.tscn" id="2_qgtup"]
-[ext_resource type="PackedScene" uid="uid://c02wtgqbmnsk2" path="res://scenes/props/powerups/Powerup_Low_Grav.tscn" id="3_4cl3d"]
+[ext_resource type="PackedScene" uid="uid://c02wtgqbmnsk2" path="res://scenes/props/powerups/pickup_cubo_antigravedad.tscn" id="3_4cl3d"]
+[ext_resource type="PackedScene" uid="uid://bqaf5xkgkvb2l" path="res://scenes/props/powerups/pickup_cubo_apestoso.tscn" id="4_k842t"]
+[ext_resource type="PackedScene" uid="uid://cymdoegqowybw" path="res://scenes/props/powerups/pickup_scar.tscn" id="5_glsmt"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_cua6d"]
 
@@ -321,6 +323,15 @@ mesh = SubResource("ArrayMesh_qgtup")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Suelo_4x24/StaticBody3D" unique_id=731753626]
 shape = SubResource("ConcavePolygonShape3D_4cl3d")
 
+[node name="Suelo_4x29" type="MeshInstance3D" parent="." unique_id=1432838218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, -4)
+mesh = SubResource("ArrayMesh_qgtup")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Suelo_4x29" unique_id=343704955]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Suelo_4x29/StaticBody3D" unique_id=2087748849]
+shape = SubResource("ConcavePolygonShape3D_4cl3d")
+
 [node name="Suelo_4x5" type="MeshInstance3D" parent="." unique_id=546247641]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 mesh = SubResource("ArrayMesh_qgtup")
@@ -496,4 +507,37 @@ shape = SubResource("ConcavePolygonShape3D_obrjf")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3, 1, 7)
 
 [node name="PowerUpLowGrav" parent="." unique_id=2043062377 instance=ExtResource("3_4cl3d")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.317375, 1.0662009, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -1)
+
+[node name="PowerUpLowGrav2" parent="." unique_id=333716665 instance=ExtResource("3_4cl3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -3)
+
+[node name="PowerUpLowGrav3" parent="." unique_id=64813692 instance=ExtResource("3_4cl3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -5)
+
+[node name="PowerUpLowGrav4" parent="." unique_id=337983272 instance=ExtResource("3_4cl3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -7)
+
+[node name="PickupCuboApestoso" parent="." unique_id=579066906 instance=ExtResource("4_k842t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4312415, 0.9001298, 0)
+
+[node name="PickupCuboApestoso2" parent="." unique_id=117268763 instance=ExtResource("4_k842t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4312415, 0.9001298, -2)
+
+[node name="PickupCuboApestoso3" parent="." unique_id=440779442 instance=ExtResource("4_k842t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.431242, 0.9001298, -1)
+
+[node name="PickupCuboApestoso4" parent="." unique_id=1833131454 instance=ExtResource("4_k842t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.431242, 0.9001298, 1)
+
+[node name="PickupScar4" parent="." unique_id=2086311777 instance=ExtResource("5_glsmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5840845, 0.92243624, -8.826094)
+
+[node name="PickupScar5" parent="." unique_id=232268238 instance=ExtResource("5_glsmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5840845, 0.92243624, -8.826094)
+
+[node name="PickupScar6" parent="." unique_id=551106535 instance=ExtResource("5_glsmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5840845, 0.92243624, -8.826094)
+
+[node name="PickupScar7" parent="." unique_id=283377556 instance=ExtResource("5_glsmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4159155, 0.92243624, -8.826094)

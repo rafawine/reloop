@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bqaf5xkgkvb2l"]
+
+[ext_resource type="Script" uid="uid://hnjxjb2g56a7" path="res://scenes/props/powerups/pickup_item.gd" id="1_m3rpb"]
+[ext_resource type="Resource" uid="uid://d3kc67h2poccd" path="res://scenes/props/items/cubo_apestoso.tres" id="2_t28td"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m3rpb"]
+albedo_color = Color(0.77254903, 0.9843137, 0.4862745, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t28td"]
+material = SubResource("StandardMaterial3D_m3rpb")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hcdps"]
+
+[node name="PickupCuboApestoso" type="Area3D" unique_id=579066906]
+script = ExtResource("1_m3rpb")
+item_resource = ExtResource("2_t28td")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=786765631]
+mesh = SubResource("BoxMesh_t28td")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=533885643]
+shape = SubResource("BoxShape3D_hcdps")

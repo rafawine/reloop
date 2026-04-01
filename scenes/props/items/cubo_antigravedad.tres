@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cn7yap4jm0lu7"]
+
+[ext_resource type="Script" uid="uid://soj8qr8syp5d" path="res://resources/item_data.gd" id="1_84luh"]
+[ext_resource type="Script" uid="uid://y3pi1h0x1qie" path="res://scenes/player/mechanics/low_gravity_jump.gd" id="1_on8uq"]
+
+[resource]
+script = ExtResource("1_84luh")
+name = "Cubo Antigravedad"
+max_stack = 6
+drop_scene_path = "uid://c02wtgqbmnsk2"
+mechanic_script = ExtResource("1_on8uq")
+metadata/_custom_type_script = "uid://soj8qr8syp5d"
