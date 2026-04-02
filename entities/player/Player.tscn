@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dmbwqpap2rtrk"]
+
+[ext_resource type="Script" uid="uid://dbyodwhoolqbw" path="res://entities/player/player_controller.gd" id="1_mab2k"]
+[ext_resource type="Script" uid="uid://8oum0c680feb" path="res://entities/player/movement_state_machine.gd" id="2_453mm"]
+[ext_resource type="Script" uid="uid://dh0xe6w3gswm5" path="res://entities/player/state_idle.gd" id="3_fmb3c"]
+[ext_resource type="Script" uid="uid://lwj3lg0eqh0e" path="res://entities/player/state_run.gd" id="4_rl6fg"]
+[ext_resource type="Script" uid="uid://dwr4ox4yrjb62" path="res://entities/player/state_sprint.gd" id="5_q57vx"]
+[ext_resource type="Script" uid="uid://c0isuofyghrou" path="res://entities/player/state_slide.gd" id="6_ak4un"]
+[ext_resource type="Script" uid="uid://cxw0vl4rhjxhl" path="res://entities/player/state_air.gd" id="7_1ms0h"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mab2k"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dlxvd"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mab2k"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dlxvd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mab2k"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=271051614]
+script = ExtResource("1_mab2k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1200514366]
+shape = SubResource("CapsuleShape3D_mab2k")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=2055954156]
+replication_config = SubResource("SceneReplicationConfig_dlxvd")
+
+[node name="VisualRoot" type="Node3D" parent="." unique_id=2059433254]
+
+[node name="PlayerModel_Mesh" type="MeshInstance3D" parent="VisualRoot" unique_id=1356581168]
+mesh = SubResource("CapsuleMesh_mab2k")
+
+[node name="AnimationTree" type="AnimationTree" parent="VisualRoot" unique_id=361258727]
+
+[node name="PlayerSkeleton" type="Skeleton3D" parent="VisualRoot" unique_id=2036549082]
+
+[node name="PlayerMesh" type="MeshInstance3D" parent="VisualRoot/PlayerSkeleton" unique_id=1387825726]
+
+[node name="HeadAttachment" type="BoneAttachment3D" parent="VisualRoot/PlayerSkeleton" unique_id=399047761]
+
+[node name="Hitbox_Head" type="Area3D" parent="VisualRoot/PlayerSkeleton/HeadAttachment" unique_id=909413711]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VisualRoot/PlayerSkeleton/HeadAttachment/Hitbox_Head" unique_id=960241429]
+shape = SubResource("SphereShape3D_dlxvd")
+
+[node name="ChestAttachment" type="BoneAttachment3D" parent="VisualRoot/PlayerSkeleton" unique_id=632359813]
+
+[node name="Hitbox_Chest" type="Area3D" parent="VisualRoot/PlayerSkeleton/ChestAttachment" unique_id=446480080]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VisualRoot/PlayerSkeleton/ChestAttachment/Hitbox_Chest" unique_id=59551054]
+shape = SubResource("BoxShape3D_mab2k")
+
+[node name="CameraRig" type="Node3D" parent="." unique_id=1987016942]
+
+[node name="HorizontalPivot" type="Node3D" parent="CameraRig" unique_id=1108799114]
+
+[node name="VerticalPivot" type="Node3D" parent="CameraRig/HorizontalPivot" unique_id=6652906]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraRig/HorizontalPivot/VerticalPivot" unique_id=1686405007]
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig/HorizontalPivot/VerticalPivot/SpringArm3D" unique_id=1102027902]
+
+[node name="MovementStateMachine" type="Node" parent="." unique_id=1708216679]
+script = ExtResource("2_453mm")
+
+[node name="State_Idle" type="Node" parent="MovementStateMachine" unique_id=1270896789]
+script = ExtResource("3_fmb3c")
+
+[node name="State_Run" type="Node" parent="MovementStateMachine" unique_id=1511892682]
+script = ExtResource("4_rl6fg")
+
+[node name="State_Sprint" type="Node" parent="MovementStateMachine" unique_id=1510487854]
+script = ExtResource("5_q57vx")
+
+[node name="State_Slide" type="Node" parent="MovementStateMachine" unique_id=605403105]
+script = ExtResource("6_ak4un")
+
+[node name="State_Air" type="Node" parent="MovementStateMachine" unique_id=780707019]
+script = ExtResource("7_1ms0h")
+
+[node name="Components" type="Node" parent="." unique_id=138935943]
+
+[node name="WeaponHandlerComponent" type="Node" parent="Components" unique_id=1989031869]
+
+[node name="MuzzleFlashEmitter" type="GPUParticles3D" parent="Components/WeaponHandlerComponent" unique_id=412595213]
+
+[node name="ShootAudio" type="AudioStreamPlayer3D" parent="Components/WeaponHandlerComponent" unique_id=1223782216]
+
+[node name="HealthComponent" type="Node" parent="Components" unique_id=776134984]
+
+[node name="MeshRoot_temp" type="Node3D" parent="." unique_id=1517504077]
+
+[node name="PlayerSkeleton" type="Skeleton3D" parent="MeshRoot_temp" unique_id=45894922]
+
+[node name="PlayerMesh" type="MeshInstance3D" parent="MeshRoot_temp/PlayerSkeleton" unique_id=1848642952]

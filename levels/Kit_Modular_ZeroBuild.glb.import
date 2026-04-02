@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cg1a0aq1ovfwu"
-path="res://.godot/imported/Kit_Modular_ZeroBuild.glb-c9fa5e6e1095177246d44de50b1ce599.scn"
+path="res://.godot/imported/Kit_Modular_ZeroBuild.glb-d468b141f0873435d716d4caa6d96a2f.scn"
 
 [deps]
 
-source_file="res://assets/models/Kit_Modular_ZeroBuild.glb"
-dest_files=["res://.godot/imported/Kit_Modular_ZeroBuild.glb-c9fa5e6e1095177246d44de50b1ce599.scn"]
+source_file="res://levels/Kit_Modular_ZeroBuild.glb"
+dest_files=["res://.godot/imported/Kit_Modular_ZeroBuild.glb-d468b141f0873435d716d4caa6d96a2f.scn"]
 
 [params]
 

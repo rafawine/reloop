@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://beaxc3l0hfl3m"]
+
+[ext_resource type="PackedScene" uid="uid://dmbwqpap2rtrk" path="res://entities/player/Player.tscn" id="1_2262g"]
+[ext_resource type="PackedScene" uid="uid://dhblr1mi74r1e" path="res://levels/Suelo.tscn" id="2_wdj6m"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_cua6d"]
+
+[sub_resource type="Sky" id="Sky_qgtup"]
+sky_material = SubResource("PhysicalSkyMaterial_cua6d")
+
+[sub_resource type="Environment" id="Environment_4cl3d"]
+background_mode = 2
+sky = SubResource("Sky_qgtup")
+
+[node name="Main" type="Node3D" unique_id=1805347317]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=282047305]
+transform = Transform3D(0.7071068, -0.5, 0.5, 0, 0.7071068, 0.7071068, -0.7071068, -0.5, 0.5, 0, 10, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2138203508]
+environment = SubResource("Environment_4cl3d")
+
+[node name="CharacterBody3D" parent="." unique_id=271051614 instance=ExtResource("1_2262g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Suelo" parent="." unique_id=956108318 instance=ExtResource("2_wdj6m")]
+
+[node name="Suelo3" parent="." unique_id=365984743 instance=ExtResource("2_wdj6m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Suelo2" parent="." unique_id=1548889424 instance=ExtResource("2_wdj6m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
